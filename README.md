@@ -1,14 +1,14 @@
-# sanity-plugin-tags
+# sanity-plugin-tags-olh
 
 > This is a **Sanity Studio v3** plugin.
 
 A multi-tag input for sanity studio. Fully featured with autocomplete capabilities, live updates, predefined tag options, style and component customizability, and much more.
 
-![Example Picture](https://github.com/pcbowers/sanity-plugin-tags/blob/main/docs/example.png?raw=true)
+![Example Picture](https://github.com/pcbowers/sanity-plugin-tags-olh/blob/main/docs/example.png?raw=true)
 
 ## Install
 
-Sanity v3: `npm install sanity-plugin-tags`  
+Sanity v3: `npm install sanity-plugin-tags-olh`
 Sanity v2: `sanity install tags`
 
 ## Use
@@ -17,7 +17,7 @@ Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
 import {defineConfig} from 'sanity'
-import {tags} from 'sanity-plugin-tags'
+import {tags} from 'sanity-plugin-tags-olh'
 
 export default defineConfig({
   //...
