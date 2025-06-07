@@ -2,6 +2,9 @@ name: Publish NPM Package
 on:
   release:
     types: [published]
+permissions:
+  contents: write
+  packages: write
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -9,8 +12,8 @@ jobs:
       - name: Checkout Git Repository
         uses: actions/checkout@v3
       - run: |
-          git config user.name pcbowers
-          git config user.email pcbowers@gmail.com
+          git config user.name pjdvmalan
+          git config user.email pjdvmalan@hotmail.com
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -18,8 +21,13 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install Node.js Dependencies
         run: npm ci
-      - name: Version NPM Package
-        run: "npm version ${{ github.event.release.tag_name }} -m 'chore(release): :bookmark: Updated Package Version to ${{ github.event.release.tag_name }} [skip-ci]'"
+      - name: Update package.json version
+        run: |
+          npm pkg set version=${{ github.event.release.tag_name }}
+      - name: Commit version update
+        run: |
+          git add package.json
+          git commit -m "chore(release): :bookmark: Updated Package Version to ${{ github.event.release.tag_name }} [skip-ci]"
       - run: git push origin HEAD:main
       - name: Build, Lint and Publish NPM Package
         run: npm publish
