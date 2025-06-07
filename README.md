@@ -4,7 +4,9 @@
 
 A multi-tag input for sanity studio. Fully featured with autocomplete capabilities, live updates, predefined tag options, style and component customizability, and much more.
 
-![Example Picture](https://github.com/pcbowers/sanity-plugin-tags-olh/blob/main/docs/example.png?raw=true)
+Note: this is a clone of https://github.com/pcbowers/sanity-plugin-tags, awaiting owner to accept pull request.
+
+![Example Picture](https://github.com/open-learning-hub/sanity-plugin-tags-olh/blob/main/docs/example.png?raw=true)
 
 ## Install
 
